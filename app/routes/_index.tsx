@@ -1,6 +1,10 @@
 import * as React from "react";
 
-import { json, type V2_MetaFunction, type LoaderArgs } from "@remix-run/node";
+import {
+  json,
+  type V2_MetaFunction,
+  type LoaderArgs,
+} from "@remix-run/cloudflare";
 import { Form, useLoaderData, useSubmit } from "@remix-run/react";
 import { DateTime } from "luxon";
 import clsx from "clsx";
