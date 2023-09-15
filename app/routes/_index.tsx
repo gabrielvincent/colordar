@@ -136,12 +136,19 @@ export async function loader({ request }: LoaderArgs) {
 
   months = months.filter((month) => !month.isOverflowMonth);
 
-  return json({
-    months,
-    isoToday: today.toISODate()!,
-    isoTargetDate,
-    mode,
-  });
+  return json(
+    {
+      months,
+      isoToday: today.toISODate()!,
+      isoTargetDate,
+      mode,
+    },
+    {
+      headers: {
+        "Cache-Control": "public, immutable, max-age=3600",
+      },
+    }
+  );
 }
 
 export default function Index() {

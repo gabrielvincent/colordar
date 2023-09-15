@@ -21549,12 +21549,19 @@ async function loader({ request }) {
           lastMonth.days.push(currentDate2.toISODate()), currentDate2 = currentDate2.plus({ day: 1 });
       }
     }
-  return months2 = months2.filter((month) => !month.isOverflowMonth), (0, import_cloudflare2.json)({
-    months: months2,
-    isoToday: today.toISODate(),
-    isoTargetDate,
-    mode
-  });
+  return months2 = months2.filter((month) => !month.isOverflowMonth), (0, import_cloudflare2.json)(
+    {
+      months: months2,
+      isoToday: today.toISODate(),
+      isoTargetDate,
+      mode
+    },
+    {
+      headers: {
+        "Cache-Control": "public, immutable, max-age=3600"
+      }
+    }
+  );
 }
 function Index() {
   let { months: months2, isoToday, isoTargetDate, mode } = useLoaderData2(), submit = useSubmit(), formRef = React7.useRef(null), handleChangeInput = () => {
@@ -21575,19 +21582,19 @@ function Index() {
         !1,
         {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 163,
+          lineNumber: 170,
           columnNumber: 15
         },
         this
       ) }, void 0, !1, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 162,
+        lineNumber: 169,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("label", { htmlFor: "mode", className: "font-light text-xs", children: "Mode d'affichage" }, void 0, !1, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 173,
+          lineNumber: 180,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
@@ -21599,12 +21606,12 @@ function Index() {
             children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("option", { value: "compact", selected: mode === "compact", children: "Compact" }, void 0, !1, {
                 fileName: "app/routes/_index.tsx",
-                lineNumber: 181,
+                lineNumber: 188,
                 columnNumber: 17
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("option", { value: "full", selected: mode === "full", children: "Complet" }, void 0, !1, {
                 fileName: "app/routes/_index.tsx",
-                lineNumber: 184,
+                lineNumber: 191,
                 columnNumber: 17
               }, this)
             ]
@@ -21613,85 +21620,85 @@ function Index() {
           !0,
           {
             fileName: "app/routes/_index.tsx",
-            lineNumber: 176,
+            lineNumber: 183,
             columnNumber: 15
           },
           this
         )
       ] }, void 0, !0, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 172,
+        lineNumber: 179,
         columnNumber: 13
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 161,
+      lineNumber: 168,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 160,
+      lineNumber: 167,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 159,
+      lineNumber: 166,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "mx-auto grid max-w-3xl grid-cols-1 gap-x-8 gap-y-16 px-4 py-16 sm:grid-cols-2 sm:px-6 xl:max-w-none xl:grid-cols-3 xl:px-8 2xl:grid-cols-4", children: months2.map((month) => /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("section", { className: "text-center", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "space-x-1", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h2", { className: "inline text-sm font-semibold text-gray-900", children: month.name }, void 0, !1, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 197,
+          lineNumber: 204,
           columnNumber: 17
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h4", { className: "inline text-xs font-light", children: month.year }, void 0, !1, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 200,
+          lineNumber: 207,
           columnNumber: 17
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 196,
+        lineNumber: 203,
         columnNumber: 15
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "mt-6 grid grid-cols-7 text-xs leading-6 text-gray-500", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: "L" }, void 0, !1, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 203,
+          lineNumber: 210,
           columnNumber: 17
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: "M" }, void 0, !1, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 204,
+          lineNumber: 211,
           columnNumber: 17
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: "M" }, void 0, !1, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 205,
+          lineNumber: 212,
           columnNumber: 17
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: "J" }, void 0, !1, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 206,
+          lineNumber: 213,
           columnNumber: 17
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: "V" }, void 0, !1, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 207,
+          lineNumber: 214,
           columnNumber: 17
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: "S" }, void 0, !1, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 208,
+          lineNumber: 215,
           columnNumber: 17
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: "D" }, void 0, !1, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 209,
+          lineNumber: 216,
           columnNumber: 17
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 202,
+        lineNumber: 209,
         columnNumber: 15
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "isolate mt-2 grid grid-cols-7 gap-px rounded-lg overflow-hidden bg-gray-200 text-sm shadow ring-1 ring-gray-200", children: month.days.map((day, dayIdx) => {
@@ -21727,7 +21734,7 @@ function Index() {
               !1,
               {
                 fileName: "app/routes/_index.tsx",
-                lineNumber: 239,
+                lineNumber: 246,
                 columnNumber: 23
               },
               this
@@ -21737,38 +21744,38 @@ function Index() {
           !1,
           {
             fileName: "app/routes/_index.tsx",
-            lineNumber: 224,
+            lineNumber: 231,
             columnNumber: 21
           },
           this
         );
       }) }, void 0, !1, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 211,
+        lineNumber: 218,
         columnNumber: 15
       }, this)
     ] }, month.name, !0, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 195,
+      lineNumber: 202,
       columnNumber: 13
     }, this)) }, void 0, !1, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 193,
+      lineNumber: 200,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 192,
+      lineNumber: 199,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/_index.tsx",
-    lineNumber: 158,
+    lineNumber: 165,
     columnNumber: 5
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-2IHKFEXT.js", imports: ["/build/_shared/chunk-BA6NHEY4.js", "/build/_shared/chunk-H5ZE7JVG.js", "/build/_shared/chunk-NRH5LTJ7.js", "/build/_shared/chunk-2ZUSDFAR.js", "/build/_shared/chunk-HBT46U2W.js", "/build/_shared/chunk-K6PKGSTD.js", "/build/_shared/chunk-O4OKU2LD.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OQ6SQIDB.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-H5WD6QEL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "8ac1a891", hmr: { runtime: "/build/_shared/chunk-HBT46U2W.js", timestamp: 1694778648515 }, url: "/build/manifest-8AC1A891.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-2IHKFEXT.js", imports: ["/build/_shared/chunk-BA6NHEY4.js", "/build/_shared/chunk-H5ZE7JVG.js", "/build/_shared/chunk-NRH5LTJ7.js", "/build/_shared/chunk-2ZUSDFAR.js", "/build/_shared/chunk-HBT46U2W.js", "/build/_shared/chunk-K6PKGSTD.js", "/build/_shared/chunk-O4OKU2LD.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OQ6SQIDB.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-DX2UNPOU.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "30112415", hmr: { runtime: "/build/_shared/chunk-HBT46U2W.js", timestamp: 1694780214627 }, url: "/build/manifest-30112415.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { v2_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
